@@ -1,7 +1,6 @@
 world = [[] for _ in range(4)]
 collision_pairs = {}
 
-# group : 'boy:ball', 'boy:zombie'
 def add_collision_pair(group, a, b):
     if group not in collision_pairs:
         collision_pairs[group] = [ [], [] ] # 초기화

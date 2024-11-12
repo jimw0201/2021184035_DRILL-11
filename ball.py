@@ -29,4 +29,6 @@ class Ball:
         # fill here
         if group == 'boy:ball':
             game_world.remove_object(self)
+        elif group == 'zombie:ball':
+            game_world.remove_object(self)
         pass

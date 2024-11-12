@@ -21,15 +21,6 @@ ACTION_PER_TIME = 1.0 / TIME_PER_ACTION
 FRAMES_PER_ACTION = 8
 
 
-
-
-
-
-
-
-
-
-
 class Idle:
     @staticmethod
     def enter(boy, e):
@@ -160,6 +151,7 @@ class Boy:
             self.ball_count -= 1
             ball = Ball(self.x, self.y, self.face_dir*10)
             game_world.add_object(ball)
+            game_world.add_collision_pair('ball:zombie', ball, None)
 
     def get_bb(self):
         # fill here
@@ -171,4 +163,7 @@ class Boy:
         # fill here
         if group == 'boy:ball':
             self.ball_count += 1
+        elif group == 'boy:zombie':
+            print('Game Over!')
+            game_framework.quit()
         pass
